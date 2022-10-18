@@ -1,0 +1,21 @@
+html {
+  background-color: #030b62;
+  color: white;
+}
+
+header {
+  display: flex;
+}
+
+form {
+  border: 1px solid red;
+}
+
+li {
+  display: flex;
+  border: 1px solid blue;
+}
+
+section {
+  display: flex;
+}
