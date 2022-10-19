@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css" />
 
     <title>To Do APP</title>
@@ -12,7 +13,6 @@
   <body>
     <header>
       <h1>Minha Lista</h1>
-      <button class="" id="btnTema">tema</button>
     </header>
 
     <form action="">
@@ -22,29 +22,14 @@
     </form>
 
     <ul>
-      <!-- <li>
-        <input type="checkbox" name="" id="" />
-        <p>Tarefa 1 </p>
-        <button>X</button>
-      </li> -->
     </ul>
 
-    <!-- <section>
-      <div>
-        <label for="">todos</label>
-        <input type="radio" name="filtro" id="todos" />
-      </div>
-
-      <div>
-        <label for="">ativos</label>
-        <input type="radio" name="filtro" id="ativos" />
-      </div>
-
-      <div>
-        <label for="">concluidos</label>
-        <input type="radio" name="filtro" id="concluidos" />
-      </div>
-    </section> -->
+    <section class="sec-edita invisivel" id="sec-editar">
+      <h2>Editar</h2>
+      <input type="text" id="novoElemento">
+      <button type="submit" id="confirma">OK</button>
+      <button type="submit" id="cancela">X</button>
+    </section>
 
     <script src="js/main.js"></script>
   </body>

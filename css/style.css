@@ -1,21 +1,43 @@
 html {
   background-color: #030b62;
   color: white;
+
+  font-size: 2rem;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header {
   display: flex;
+  margin-top: 3rem;
 }
 
 form {
+  margin-top: 1rem;
   border: 1px solid red;
+
+  
 }
 
 li {
   display: flex;
+  justify-content: space-between;
   border: 1px solid blue;
+
+  width: 300px;
 }
 
 section {
   display: flex;
+}
+
+.invisivel {
+  display: none;
 }
