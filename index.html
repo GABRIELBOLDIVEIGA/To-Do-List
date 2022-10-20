@@ -16,42 +16,40 @@
     </header>
 
     <main>
-    <div class="inputBox">
-      <input type="text" id="novaTarefa" required="required" />
-      <span>Nova Tarefa</span>
 
-      <button id="btnAdiciona" value="+" /> + </button>
-    </div>
+      <div class="inputBox">
+        <input type="text" id="novaTarefa" required="required" />
+        <span>Nova Tarefa</span>
+        <div>
+          <button id="btnAdiciona" value="+">+</button>
+        </div>
+      </div>
 
-    <ul>
-      <li class="custom-checkbox">
-        <input type="checkbox" id="1" />
-        <label for="1">Alguma tarefa muito importante</label>
-        
-        <button class="botaoEdita">editar</button>
-        <button class="botaoCancela">X</button>
-      </li>
-    </ul>
+      <ul>
+        <li class="custom-checkbox">
+          <input type="checkbox" id="1" />
+          <label for="1">Alguma tarefa muito importante</label>
+          <div>
+            <button class="btnEditar"></button>
+            <button class="btnDeletar"></button>
+          </div>
+        </li>
+      </ul>
 
-    <!-- <div class="custom-checkbox">
-      <input id="checkbox-1" type="checkbox" />
-      <label for="checkbox-1">Checkbox l</label>
-    </div> -->
+      <section class="sec-edita invisivel" id="sec-editar">
+        <input type="text" id="novoElemento" required="required" />
+        <span>Editar</span>
+        <div>
+          <button class="c" id="confirma">+</button>
+          <button class="x"  id="cancela">+</button>
+        </div>
+      </section>
 
-    <section class="sec-edita invisivel" id="sec-editar">
-      <!-- <h2>Editar</h2> -->
-      
-      <input type="text" id="novoElemento" required="required" />
-      <span>Editar</span>
-
-      
-        <button id="confirma">OK</button>
-        <button id="cancela">X</button>
- 
-      
-    </section>
-
-  </main>
+      <!-- <button class="btnSalavar">+</button>
+      <button class="btnCancelar">+</button>
+      <button class="btnEditar"></button>
+      <button class="btnDeletar"></button> -->
+    </main>
 
     <script src="js/main.js"></script>
   </body>
