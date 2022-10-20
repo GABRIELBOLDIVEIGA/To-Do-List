@@ -29,7 +29,7 @@ btnAdiciona.addEventListener("click", (event) => {
 
 function criaElemento(elemento) {
   const li = document.createElement("li");
-  // li.classList.add("custom-checkbox");
+  li.classList.add("custom-checkbox");
   // tem que adicional a label no lugar do p
   // vai interferir na funcao de atualizar
   const nome = document.createElement("p");
