@@ -28,31 +28,66 @@ btnAdiciona.addEventListener("click", (event) => {
 });
 
 function criaElemento(elemento) {
+  // const li = document.createElement("li");
+  // li.classList.add("custom-checkbox");
+  
+  // const nome = document.createElement("p");
+  // nome.innerText = elemento.nome;
+
+  // const input = document.createElement("input");
+  // input.setAttribute("type", "checkbox");
+
+  // li.appendChild(input);
+  // li.appendChild(nome);
+
+  // li.appendChild(botaoEditar(elemento.id));
+  // li.appendChild(botaoDeleta(elemento.id));
+
+  // lista.appendChild(li);
+
+  lista.appendChild(criaElemento2(elemento));
+}
+
+function criaElemento2(elemento) {
   const li = document.createElement("li");
   li.classList.add("custom-checkbox");
-  // tem que adicional a label no lugar do p
-  // vai interferir na funcao de atualizar
-  const nome = document.createElement("p");
-  nome.innerText = elemento.nome;
 
   const input = document.createElement("input");
-  input.setAttribute("type", "checkbox");
+  input.type = "checkbox";
+  input.id = elemento.id;
+
+  const label = document.createElement("label");
+  label.setAttribute("for", elemento.id)
+  label.innerText = elemento.nome;
+  
+  const div = document.createElement("div");
+
+  const buttonEditar = document.createElement("button");
+  buttonEditar.classList.add("btnEditar");
+
+  const buttonDeletar = document.createElement("btnDeletar");
+  buttonDeletar.classList.add("btnDeletar");
 
   li.appendChild(input);
-  li.appendChild(nome);
+  li.appendChild(label);
+  div.appendChild(botaoEditar(elemento.id));
+  div.appendChild(botaoDeleta(elemento.id));
+  li.appendChild(div);
 
-  li.appendChild(botaoEditar(elemento.id));
-  li.appendChild(botaoDeleta(elemento.id));
+  // lista.appendChild(li);
 
-  lista.appendChild(li);
+  console.log(li);
+  return li;
 }
 
 function botaoDeleta(id) {
   const buttonDelete = document.createElement("button");
-  buttonDelete.innerText = "X";
+  // buttonDelete.innerText = "X";
+  buttonDelete.classList.add("btnDeletar");
 
   buttonDelete.addEventListener("click", function () {
-    deletaTarefa(this.parentNode, id);
+    // console.log(this.parentNode.parentNode);
+    deletaTarefa(this.parentNode.parentNode, id);
   });
 
   return buttonDelete;
@@ -71,12 +106,13 @@ function deletaTarefa(element, id) {
 
 function botaoEditar(id) {
   const btnEditar = document.createElement("button");
-  btnEditar.innerText = "Editar";
+  // btnEditar.innerText = "Editar";
+  btnEditar.classList.add("btnEditar");
 
   btnEditar.addEventListener("click", function () {
     secEdicao.classList.remove("invisivel");
 
-    atualizar(this.parentNode, id);
+    atualizar(this.parentNode.parentNode, id);
   });
 
   return btnEditar;
@@ -85,7 +121,7 @@ function botaoEditar(id) {
 function atualizar(elemento, id) {
   let inputNovo = secEdicao.querySelector("input");
   inputNovo.focus();
-  inputNovo.value = elemento.querySelector("p").textContent;
+  inputNovo.value = elemento.querySelector("label").textContent;
   inputNovo.id = id;
 
   montaElemento(elemento, id);
@@ -99,7 +135,7 @@ function montaElemento(elemento, id) {
 }
 
 botaoConfirma.addEventListener("click", () => {
-  e_AUX.querySelector("p").textContent = secEdicao.querySelector("input").value;
+  e_AUX.querySelector("label").textContent = secEdicao.querySelector("input").value;
 
   let index = item.findIndex((element) => element.id === i_AUX);
 
