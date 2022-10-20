@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
 
     <title>To Do APP</title>
@@ -12,24 +12,46 @@
 
   <body>
     <header>
-      <h1>Minha Lista</h1>
+      <h1>Minhas Tarefas</h1>
     </header>
 
-    <form action="">
-      <label for=""></label>
-      <input type="text" placeholder="Nova Tarefa" id="novaTarefa" required/>
-      <input type="submit" id="btnAdiciona" value="+" />
-    </form>
+    <main>
+    <div class="inputBox">
+      <input type="text" id="novaTarefa" required="required" />
+      <span>Nova Tarefa</span>
+
+      <button id="btnAdiciona" value="+" /> + </button>
+    </div>
 
     <ul>
+      <li class="custom-checkbox">
+        <input type="checkbox" id="1" />
+        <label for="1">Alguma tarefa muito importante</label>
+        
+        <button class="botaoEdita">editar</button>
+        <button class="botaoCancela">X</button>
+      </li>
     </ul>
 
+    <!-- <div class="custom-checkbox">
+      <input id="checkbox-1" type="checkbox" />
+      <label for="checkbox-1">Checkbox l</label>
+    </div> -->
+
     <section class="sec-edita invisivel" id="sec-editar">
-      <h2>Editar</h2>
-      <input type="text" id="novoElemento">
-      <button type="submit" id="confirma">OK</button>
-      <button type="submit" id="cancela">X</button>
+      <!-- <h2>Editar</h2> -->
+      
+      <input type="text" id="novoElemento" required="required" />
+      <span>Editar</span>
+
+      
+        <button id="confirma">OK</button>
+        <button id="cancela">X</button>
+ 
+      
     </section>
+
+  </main>
 
     <script src="js/main.js"></script>
   </body>

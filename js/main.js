@@ -29,6 +29,9 @@ btnAdiciona.addEventListener("click", (event) => {
 
 function criaElemento(elemento) {
   const li = document.createElement("li");
+  // li.classList.add("custom-checkbox");
+  // tem que adicional a label no lugar do p
+  // vai interferir na funcao de atualizar
   const nome = document.createElement("p");
   nome.innerText = elemento.nome;
 
@@ -68,7 +71,7 @@ function deletaTarefa(element, id) {
 
 function botaoEditar(id) {
   const btnEditar = document.createElement("button");
-  btnEditar.innerText = "Lapiz";
+  btnEditar.innerText = "Editar";
 
   btnEditar.addEventListener("click", function () {
     secEdicao.classList.remove("invisivel");
