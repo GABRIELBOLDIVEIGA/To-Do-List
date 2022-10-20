@@ -16,7 +16,6 @@
   --azul: #064789;
   --azul-claro: #427aa1;
   --branco: #ebf2fa;
- 
 }
 
 * {
@@ -28,7 +27,6 @@
 
 body {
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   min-height: 100vh;
   flex-direction: column;
@@ -39,17 +37,12 @@ body {
 
 main {
   width: 375px;
-  /* background-color: antiquewhite; */
 }
 
 h1 {
   color: var(--branco);
   font-size: 2em;
   text-transform: uppercase;
-}
-
-li:hover {
-  cursor: pointer;
 }
 
 header {
@@ -61,25 +54,57 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background-color: var(--azul); */
-  /* border: 1px solid var(--azul); */
   
   border-bottom-right-radius: 10px;
  
-  margin: 1em 0 1em 0;
+  margin: 2em 0 1em 0;
   width: 100%;
-  height: 2.5em;
+  height: 3em;
 
   color: var(--branco);
-  box-shadow: 10px 10px 10px 1px var(--vermelho);
+  box-shadow: 4px 7px 3px 1px var(--azul-claro);
 }
 
 label {
   width: 100%;
   margin: 0, 1em, 0, 10em;
+
   overflow-wrap: break-word;
   word-wrap: break-word;
   word-break: break-word;
+}
+
+li div, section div {
+  display: flex;
+}
+
+.btnEditar, 
+.btnDeletar {
+  border: none;
+
+  width: 20px;
+  height: 20px;
+
+  margin-right: 0.5em;
+ 
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.btnEditar:hover, 
+.btnDeletar:hover {
+  cursor: pointer;
+  transform: scale(1.1, 1.1);
+}
+
+.btnEditar {
+  background-image: url("../img/lapiz-1.png");
+}
+
+.btnDeletar {
+  background-image: url("../img/lixeira.png");
 }
 
 /* ********** Input ********** */
@@ -87,18 +112,54 @@ label {
 .sec-edita {
   display: flex;
   position: relative;
+  /* border: none; */
 }
 
 .inputBox input,
 .sec-edita input {
   width: 100%;
   padding: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
   background: var(--azul-acizentado);
-  border-radius: 5px;
+  
   outline: none;
   color: var(--branco);
   font-size: 1em;
+  transition: 0.5s;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  border-bottom-right-radius: none;
+  border-top-right-radius: none;
+  border-right: none;
+}
+
+.inputBox button,
+.sec-edita button {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.25);
+  
+  width: 30px;
+  font-size: 2em;
+  font-weight: 600;  
+
+  border: none;
+  transition: 0.5s;
+}
+.sec-edita .c {
+  color: var(--verde);
+}
+.sec-edita .x {
+  color: red;
+  transform: rotate(45deg);
+}
+
+.inputBox div,
+.sec-edita div {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+  border-left: none;
   transition: 0.5s;
 }
 
@@ -132,7 +193,7 @@ label {
 .inputBox:nth-child(2) input:focus ~ span {
   background: var(--azul-claro);
   color: var(--azul-acizentado);
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 .inputBox input:valid,
@@ -140,9 +201,62 @@ label {
 .sec-edita input:valid,
 .sec-edita input:focus {
   border: 1px solid var(--azul-claro);
+  border-right: none;
 }
 
-/****** CheckBox ******/
+.inputBox input:valid ~ div,
+.inputBox input:focus ~ div,
+.sec-edita input:valid ~ div,
+.sec-edita input:focus ~ div 
+{
+  border: 1px solid var(--azul-claro);
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+  border-left: none;
+}
+
+.inputBox button:hover,
+.sec-edita .c:hover
+{
+  cursor: pointer;
+  color: var(--verde);
+  
+  animation: rotate 0.2s linear;
+}
+
+.sec-edita .x:hover {
+  cursor: pointer;
+  
+  animation: rotate2 0.2s linear;
+  /* transform: rotate(45deg); */
+}
+
+@keyframes rotate{
+  0%{
+      transform:rotate(0deg);
+  }
+  50%{
+      transform:rotate(45deg);  
+  }
+  100%{
+      transform: rotate(90deg);
+  }
+}
+
+@keyframes rotate2{
+  0%{
+      transform:rotate(45deg);
+  }
+  50%{
+      transform:rotate(90deg); 
+  }
+  100%{
+      transform: rotate(135deg);
+  }
+}
+
+
+/****** CheckBox e li ******/
 .custom-checkbox input {
   display: none;
 }
@@ -157,8 +271,6 @@ label {
   display: inline-block;
   vertical-align: middle;
   margin: 3px 8px 3px 8px;
-  /* margin-right: 8px;
-  margin-bottom: 3px; */
 }
 
 .custom-checkbox input:checked + label:before {
@@ -175,7 +287,9 @@ label {
   text-decoration: line-through;
 }
 
-
+label:hover {
+  cursor: pointer;
+}
 
 /* ****************************************** */
 .invisivel {
