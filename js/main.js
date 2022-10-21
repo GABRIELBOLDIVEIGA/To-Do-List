@@ -13,8 +13,6 @@ btnAdiciona.addEventListener("click", (event) => {
   event.preventDefault();
   const nome = document.querySelector("#novaTarefa");
 
-  !nome.value ? console.log("Tarefa em branco, ta de Parabéns") : console.log(`Tarefa: ${nome.value}`);
-
   const tarefa = {
     nome: nome.value,
     estado: false,
@@ -26,6 +24,8 @@ btnAdiciona.addEventListener("click", (event) => {
 
   item.push(tarefa);
   localStorage.setItem("item", JSON.stringify(item));
+
+  !nome.value ? console.log("Tarefa em branco, ta de P A R A B É N S ¬¬") : console.log("Tarefa", nome.value, "adicionada.");
 
   nome.value = "";
 });
@@ -78,19 +78,17 @@ function criaLabel(elemento, input) {
     if (elemento.estado == true) {
       label.classList.remove("concluido");
       item[index].estado = false;
+      console.log("Tarefa:", item[index].nome, "não concluida.");
     } else {
       label.classList.add("concluido");
       item[index].estado = true;
+      console.log("Tarefa:", item[index].nome, "concluida.");
     }
 
     localStorage.setItem("item", JSON.stringify(item));
   });
 
   return label;
-}
-
-function autoRefresh() {
-  window.location = window.location.href;
 }
 
 function botaoDeleta(id) {
@@ -123,6 +121,7 @@ function botaoEditar(id) {
     secEdicao.classList.remove("invisivel");
 
     atualizar(this.parentNode.parentNode, id);
+    console.log("Editar Tarefa: ", this.parentNode.parentNode.textContent);
   });
 
   return btnEditar;
@@ -145,13 +144,15 @@ botaoConfirma.addEventListener("click", () => {
   item[index].nome = secEdicao.querySelector("input").value;
 
   localStorage.setItem("item", JSON.stringify(item));
-  console.log(item);
+
+  console.log("Confirma Editar.");
+  console.log("Nova Lista armazenada: ", item);
 
   secEdicao.classList.add("invisivel");
 });
 
 botaoCancela.addEventListener("click", () => {
-  console.log("Cancela");
+  console.log("Cancela Editar.");
 
   secEdicao.classList.add("invisivel");
 });

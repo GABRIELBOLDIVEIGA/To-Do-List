@@ -17,44 +17,24 @@
 
     <main>
       <div class="inputBox">
-        <input type="text" id="novaTarefa"  required/>
+        <input type="text" id="novaTarefa" autocomplete="off" required />
         <span>Nova Tarefa</span>
         <div>
-          <button id="btnAdiciona" value="+">+</button>
+          <button id="btnAdiciona">+</button>
         </div>
       </div>
 
-      <ul>
-        <!-- <li class="custom-checkbox">
-          <input type="checkbox" id="1" />
-          <label for="1">Alguma tarefa muito importante</label>
-          <div>
-            <button class="btnEditar"></button>
-            <button class="btnDeletar"></button>
-          </div>
-        </li> -->
-      </ul>
+      <ul></ul>
 
       <section class="sec-edita invisivel" id="sec-editar">
-        <input type="text" id="novoElemento" required="required" />
+        <input type="text" id="novoElemento" autocomplete="off" required="required" />
         <span>Editar</span>
         <div>
-          <button class="c" id="confirma">+</button>
-          <button class="x" id="cancela">+</button>
+          <button class="confirma" id="confirma">+</button>
+          <button class="cancela" id="cancela">+</button>
         </div>
       </section>
-
-      <!-- <button class="btnSalavar">+</button>
-      <button class="btnCancelar">+</button>
-      <button class="btnEditar"></button>
-      <button class="btnDeletar"></button> -->
     </main>
-
-    <!-- <div class="div">
-      <input class="input"  type="checkbox" id="1"/>
-      <label class="label" for="">Alguma tarefa muito importante</label>
-    </div> -->
-
     <script src="js/main.js"></script>
   </body>
 </html>

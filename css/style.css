@@ -31,7 +31,7 @@ body {
   min-height: 100vh;
   flex-direction: column;
   gap: 30px;
-  
+
   background: var(--azul-acizentado);
 }
 
@@ -54,31 +54,32 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+
   border-bottom-right-radius: 10px;
- 
+
   margin: 2em 0 1em 0;
+  padding: 1em;
   width: 100%;
-  height: 3em;
 
   color: var(--branco);
   box-shadow: 4px 7px 3px 1px var(--azul-claro);
 }
 
 label {
-  width: 100%;
+  /* width: 100%; */
   margin: 0, 1em, 0, 10em;
 
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: break-word;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-li div, section div {
+li div,
+section div {
   display: flex;
 }
 
-.btnEditar, 
+.btnEditar,
 .btnDeletar {
   border: none;
 
@@ -86,14 +87,14 @@ li div, section div {
   height: 20px;
 
   margin-right: 0.5em;
- 
+
   background-color: transparent;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
 
-.btnEditar:hover, 
+.btnEditar:hover,
 .btnDeletar:hover {
   cursor: pointer;
   transform: scale(1.1, 1.1);
@@ -112,7 +113,6 @@ li div, section div {
 .sec-edita {
   display: flex;
   position: relative;
-  /* border: none; */
 }
 
 .inputBox input,
@@ -120,7 +120,7 @@ li div, section div {
   width: 100%;
   padding: 10px;
   background: var(--azul-acizentado);
-  
+
   outline: none;
   color: var(--branco);
   font-size: 1em;
@@ -138,20 +138,13 @@ li div, section div {
 .sec-edita button {
   background-color: transparent;
   color: rgba(255, 255, 255, 0.25);
-  
+
   width: 30px;
   font-size: 2em;
-  font-weight: 600;  
+  font-weight: 600;
 
   border: none;
   transition: 0.5s;
-}
-.sec-edita .c {
-  color: var(--verde);
-}
-.sec-edita .x {
-  color: red;
-  transform: rotate(45deg);
 }
 
 .inputBox div,
@@ -207,8 +200,7 @@ li div, section div {
 .inputBox input:valid ~ div,
 .inputBox input:focus ~ div,
 .sec-edita input:valid ~ div,
-.sec-edita input:focus ~ div 
-{
+.sec-edita input:focus ~ div {
   border: 1px solid var(--azul-claro);
   border-bottom-right-radius: 4px;
   border-top-right-radius: 4px;
@@ -216,42 +208,44 @@ li div, section div {
 }
 
 .inputBox button:hover,
-.sec-edita .c:hover
-{
+.sec-edita .confirma:hover {
   cursor: pointer;
   color: var(--verde);
-  
+
   animation: rotate 0.2s linear;
 }
 
-.sec-edita .x:hover {
+.sec-edita .cancela {
+  transform: rotate(45deg);
+}
+
+.cancela:hover {
+  color: red;
   cursor: pointer;
-  
   animation: rotate2 0.2s linear;
-  /* transform: rotate(45deg); */
 }
 
-@keyframes rotate{
-  0%{
-      transform:rotate(0deg);
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
   }
-  50%{
-      transform:rotate(45deg);  
+  50% {
+    transform: rotate(45deg);
   }
-  100%{
-      transform: rotate(90deg);
+  100% {
+    transform: rotate(90deg);
   }
 }
 
-@keyframes rotate2{
-  0%{
-      transform:rotate(45deg);
+@keyframes rotate2 {
+  0% {
+    transform: rotate(45deg);
   }
-  50%{
-      transform:rotate(90deg); 
+  50% {
+    transform: rotate(90deg);
   }
-  100%{
-      transform: rotate(135deg);
+  100% {
+    transform: rotate(135deg);
   }
 }
 
@@ -276,11 +270,7 @@ li div, section div {
   background-image: url("check-solid.svg");
   background-color: var(--azul-claro);
   border: 1px solid var(--azul-acizentado);
-} 
-
-/* .custom-checkbox:nth-child(1) input:checked + label {
-  text-decoration: line-through;
-} */
+}
 
 label:hover {
   cursor: pointer;
@@ -291,25 +281,21 @@ label:hover {
   display: none;
 }
 
-/* .valido {
-  background-image: url("check-solid.svg");
-  background-color: var(--azul-claro);
-  border: 1px solid var(--azul-acizentado);
-} */
-
-.concluido{
+.concluido {
   text-decoration: line-through;
 }
 
-
-/* label:hover {
-  text-decoration: line-through;
-} */
-
-@media screen and (max-width: 375px){
-  main{
+@media screen and (max-width: 375px) {
+  main {
     width: 300px;
   }
-}
 
-/* area de teste */
+  .sec-edita .confirma {
+    color: var(--verde);
+  }
+  
+  .sec-edita .cancela {
+    color: red;
+    transform: rotate(45deg);
+  }
+}
