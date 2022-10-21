@@ -13,8 +13,11 @@ btnAdiciona.addEventListener("click", (event) => {
   event.preventDefault();
   const nome = document.querySelector("#novaTarefa");
 
+  !nome.value ? console.log("Tarefa em branco, ta de Parabéns") : console.log(`Tarefa: ${nome.value}`);
+
   const tarefa = {
     nome: nome.value,
+    estado: false,
   };
 
   tarefa.id = item[item.length - 1] ? item[item.length - 1].id + 1 : 0;
@@ -30,29 +33,72 @@ btnAdiciona.addEventListener("click", (event) => {
 function criaElemento(elemento) {
   const li = document.createElement("li");
   li.classList.add("custom-checkbox");
-  // tem que adicional a label no lugar do p
-  // vai interferir na funcao de atualizar
-  const nome = document.createElement("p");
-  nome.innerText = elemento.nome;
 
   const input = document.createElement("input");
-  input.setAttribute("type", "checkbox");
+  input.type = "checkbox";
+  input.id = elemento.id;
+
+  const label = criaLabel(elemento, input);
+
+  const div = document.createElement("div");
+
+  const buttonEditar = document.createElement("button");
+  buttonEditar.classList.add("btnEditar");
+
+  const buttonDeletar = document.createElement("btnDeletar");
+  buttonDeletar.classList.add("btnDeletar");
 
   li.appendChild(input);
-  li.appendChild(nome);
-
-  li.appendChild(botaoEditar(elemento.id));
-  li.appendChild(botaoDeleta(elemento.id));
+  li.appendChild(label);
+  div.appendChild(botaoEditar(elemento.id));
+  div.appendChild(botaoDeleta(elemento.id));
+  li.appendChild(div);
 
   lista.appendChild(li);
 }
 
+function criaLabel(elemento, input) {
+  var label = document.createElement("label");
+  label.setAttribute("for", elemento.id);
+  label.innerText = elemento.nome;
+
+  if (elemento.estado == true) {
+    input.checked = true;
+    label.classList.add("concluido");
+  } else {
+    input.checked = false;
+    label.classList.remove("concluido");
+  }
+
+  label.addEventListener("click", function () {
+    montaElemento(elemento, elemento.id);
+
+    let index = item.findIndex((element) => element.id === i_AUX);
+
+    if (elemento.estado == true) {
+      label.classList.remove("concluido");
+      item[index].estado = false;
+    } else {
+      label.classList.add("concluido");
+      item[index].estado = true;
+    }
+
+    localStorage.setItem("item", JSON.stringify(item));
+  });
+
+  return label;
+}
+
+function autoRefresh() {
+  window.location = window.location.href;
+}
+
 function botaoDeleta(id) {
   const buttonDelete = document.createElement("button");
-  buttonDelete.innerText = "X";
+  buttonDelete.classList.add("btnDeletar");
 
   buttonDelete.addEventListener("click", function () {
-    deletaTarefa(this.parentNode, id);
+    deletaTarefa(this.parentNode.parentNode, id);
   });
 
   return buttonDelete;
@@ -71,12 +117,12 @@ function deletaTarefa(element, id) {
 
 function botaoEditar(id) {
   const btnEditar = document.createElement("button");
-  btnEditar.innerText = "Editar";
+  btnEditar.classList.add("btnEditar");
 
   btnEditar.addEventListener("click", function () {
     secEdicao.classList.remove("invisivel");
 
-    atualizar(this.parentNode, id);
+    atualizar(this.parentNode.parentNode, id);
   });
 
   return btnEditar;
@@ -85,21 +131,14 @@ function botaoEditar(id) {
 function atualizar(elemento, id) {
   let inputNovo = secEdicao.querySelector("input");
   inputNovo.focus();
-  inputNovo.value = elemento.querySelector("p").textContent;
+  inputNovo.value = elemento.querySelector("label").textContent;
   inputNovo.id = id;
 
   montaElemento(elemento, id);
 }
 
-var e_AUX;
-var i_AUX;
-function montaElemento(elemento, id) {
-  e_AUX = elemento;
-  i_AUX = id;
-}
-
 botaoConfirma.addEventListener("click", () => {
-  e_AUX.querySelector("p").textContent = secEdicao.querySelector("input").value;
+  e_AUX.querySelector("label").textContent = secEdicao.querySelector("input").value;
 
   let index = item.findIndex((element) => element.id === i_AUX);
 
@@ -116,3 +155,10 @@ botaoCancela.addEventListener("click", () => {
 
   secEdicao.classList.add("invisivel");
 });
+
+var e_AUX;
+var i_AUX;
+function montaElemento(elemento, id) {
+  e_AUX = elemento;
+  i_AUX = id;
+}
