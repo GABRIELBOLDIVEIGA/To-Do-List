@@ -269,22 +269,18 @@ li div, section div {
   border: 1px solid rgba(255, 255, 255, 0.25);
   display: inline-block;
   vertical-align: middle;
-  margin: 3px 8px 3px 8px;
+  margin: 3px 15px 3px 8px;
 }
 
 .custom-checkbox input:checked + label:before {
   background-image: url("check-solid.svg");
   background-color: var(--azul-claro);
   border: 1px solid var(--azul-acizentado);
-  /* padding: 1px; */
-}
+} 
 
-.custom-checkbox:nth-child(1) input:checked + label {
- /* color:var(--verde-bonito); */
-
-
+/* .custom-checkbox:nth-child(1) input:checked + label {
   text-decoration: line-through;
-}
+} */
 
 label:hover {
   cursor: pointer;
@@ -295,8 +291,25 @@ label:hover {
   display: none;
 }
 
+/* .valido {
+  background-image: url("check-solid.svg");
+  background-color: var(--azul-claro);
+  border: 1px solid var(--azul-acizentado);
+} */
+
+.concluido{
+  text-decoration: line-through;
+}
+
+
+/* label:hover {
+  text-decoration: line-through;
+} */
+
 @media screen and (max-width: 375px){
   main{
     width: 300px;
   }
 }
+
+/* area de teste */
