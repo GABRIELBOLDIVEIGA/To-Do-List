@@ -1,0 +1,45 @@
+.lista-tarefas {
+    margin-top: 20px;
+    width: 90%;
+    /* border: 1px solid red; */
+}
+
+.item-lista {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+    padding: 0 10px;
+    background-color: #75c2f9;
+    height: 45px;
+    border: 2px solid black;
+    box-shadow: 3px 3px;
+    /* border-radius: 8px; */
+    cursor: pointer;
+}
+
+.item-lista div {
+    display: inline-flex;
+    gap: 5px;
+}
+
+.item-lista button {
+    width: 32px;
+    height: 32px;
+    border: 2px solid black;
+    box-shadow: 2px 2px;
+    /* border-radius: 8px; */
+    background-image: url("../../../public/img/trash-240.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.item-lista button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0 0;
+    transition: transform 0.2s;
+}
