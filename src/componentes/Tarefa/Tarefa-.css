@@ -25,7 +25,7 @@
     gap: 5px;
 }
 
-.item-lista button {
+.btn-delete {
     width: 32px;
     height: 32px;
     border: 2px solid black;
@@ -38,7 +38,7 @@
     cursor: pointer;
 }
 
-.item-lista button:active {
+.btn-delete:active {
     transform: translate(2px, 2px);
     box-shadow: 0 0;
     transition: transform 0.2s;
@@ -51,3 +51,31 @@
     width: 100%;
 }
 
+/****** CheckBox e li ******/
+.custom-checkbox input {
+    display: none;
+  }
+  
+  .custom-checkbox input + label:before {
+    content: " ";
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    /* background-color: var(--azul-acizentado); */
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    display: inline-block;
+    vertical-align: middle;
+    margin: 3px 15px 3px 8px;
+  }
+  
+  .custom-checkbox input:checked + label:before {
+    background-image: url("../../../public/img/check.svg");
+    background-color: red;
+    border: 1px solid blue;
+  }
+  
+  label:hover {
+    cursor: pointer;
+  }
+  
+  /* ****************************************** */

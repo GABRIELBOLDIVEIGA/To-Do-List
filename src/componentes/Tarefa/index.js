@@ -1,4 +1,4 @@
-import "./Tarefa.css";
+// import "./Tarefa.css";
 import uuid from "react-uuid";
 
 export default function Tarefa(props) {
@@ -12,9 +12,8 @@ export default function Tarefa(props) {
             <ul className="lista-tarefas">
                 {props.tarefas.map((elemento, index) => (
                     <li key={uuid()} id={index} className="item-lista">
-                        
                         <label>
-                           <input type="checkbox" />
+                            <input type="checkbox" />
                             <p>{elemento}</p>
                         </label>
 

@@ -1,0 +1,86 @@
+.item-lista {
+ 
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+    padding: 0 10px;
+    background-color: #75c2f9;
+    height: 45px;
+    border: 2px solid black;
+    box-shadow: 3px 3px;
+    
+    cursor: pointer;
+}
+
+.item-lista div {
+    display: flex;
+    width: 100%;
+    gap: 15px;
+}
+
+.texto-tarefa {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.btn-delete {
+  width: 32px;
+  height: 32px;
+  border: 2px solid black;
+  box-shadow: 2px 2px;
+  /* border-radius: 8px; */
+  background-image: url("../../../public/img/trash-240.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.btn-delete:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0 0;
+    transition: transform 0.2s;
+}
+
+.item-lista label {
+    display: flex;
+    /* align-items: center; */
+    cursor: pointer;
+    /* width: 100%; */
+} 
+
+/****** CheckBox e li *********/
+.custom-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.custom-checkbox input + label:before {
+  content: " ";
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+  border: 2px solid black;
+  box-shadow: 2px 2px;
+  display: inline-block;
+  vertical-align: middle;
+  /* margin: 3px 15px 3px 8px; */
+}
+
+.custom-checkbox input:checked + label:before {
+  background-image: url("../../../public/img/check.svg");
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position:center;
+
+}
+
+label:hover {
+  cursor: pointer;
+}
+  
+  /* ****************************************** */
