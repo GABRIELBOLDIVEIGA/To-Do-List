@@ -39,7 +39,8 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-  	background-color: #ff90e8;
+  	/* background-color: #ff90e8; */
+  	background-color: #b2c5f6;
 	width: 100vw;
 	/* height: 100vh; */
 	display: flex;

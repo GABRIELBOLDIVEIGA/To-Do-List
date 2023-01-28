@@ -1,35 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
 .App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* justify-content: center; */
-  width: 400px;
-  max-height: 700px;
-  border: 3px solid black;
-  box-shadow: 15px 15px;
-  text-align: center;
-  background-color: #23a094;
-  margin: 25px 0 50px 0;
-  padding-bottom: 50px;
-  overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    max-height: 700px;
+    border: 3px solid black;
+    box-shadow: 15px 15px;
+    text-align: center;
+    background-color: #e9d1af;
+    margin: 25px 0 0 0;
+    padding-bottom: 35px;
+    overflow-y: scroll;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
 }
 
 .App h1 {
-  margin: 30px 0;
-  font-size: 32px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
+    font-family: "Press Start 2P", cursive;
+    margin: 30px 0;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
 }
 
 .lista-tarefas {
-  margin-top: 20px;
-  width: 90%;
-  /* border: 1px solid red; */
+    margin-top: 20px;
+    width: 90%;
 }
 
 .Array-preview {
-  width: 100%;
-  padding: 20px;
-  display: flex;
-  text-align: start;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    text-align: start;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }

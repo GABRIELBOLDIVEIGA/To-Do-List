@@ -14,6 +14,7 @@ const ListaTarefa = ({ onChangeState, onChange, onDelete, value, id, state }) =>
                 <label htmlFor={id} />
 
                 <input
+                type="text"
                     className="texto-tarefa" 
                     value={value} 
                     onChange={onChange} 

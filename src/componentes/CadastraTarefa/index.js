@@ -17,6 +17,7 @@ const CadastraTarefa = ({ onSubmit }) => {
     return (
         <form className="container-cadastraItem" onSubmit={submit}>
             <input 
+                required
                 className="Todo-input" 
                 onChange={setNovaTarefa} 
                 placeholder="Nova tarefa..." 
