@@ -5,12 +5,13 @@
     flex-direction: column;
     align-items: center;
     width: 400px;
-    max-height: 700px;
+    max-width: 90vw;
+    max-height: 90vh;
     border: 3px solid black;
     box-shadow: 15px 15px;
     text-align: center;
     background-color: #e9d1af;
-    margin: 25px 0 5px 0;
+    margin: 25px 0 0 0;
     padding-bottom: 35px;
     overflow-y: scroll;
     border-top-right-radius: 15px;
