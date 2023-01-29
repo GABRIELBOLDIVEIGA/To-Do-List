@@ -21,7 +21,7 @@
 
 .App h1 {
     font-family: "Press Start 2P", cursive;
-    margin: 30px 0;
+    margin: 30px 0 20px 0;
     font-size: 28px;
     font-weight: 400;
     letter-spacing: 1.5px;
@@ -29,7 +29,6 @@
 }
 
 .lista-tarefas {
-    /* margin-top: 20px; */
     width: 90%;
 }
 

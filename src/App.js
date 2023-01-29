@@ -1,24 +1,35 @@
 import "./App.css";
 import { useState } from "react";
 import uuid from "react-uuid";
-
 import ListItems from "./componentes/ListaTarefa";
 import CadastraTarefa from "./componentes/CadastraTarefa";
 
 function App() {
     const [tarefas, setTarefas] = useState([]);
 
-    const adicionaNovaTarefa = (tarefa) => {
+    const adicionaNovaTarefaV2 = ( tarefa ) => {
         const copiaDeTarefas = Array.from(tarefas);
-        copiaDeTarefas.push({ id: uuid(), value: tarefa, state: false });
+        copiaDeTarefas.push({ 
+            id: uuid(), 
+            value: tarefa.nome, 
+            prioridade:tarefa.prioridade, 
+            state: false 
+        });
         setTarefas(copiaDeTarefas);
         mostraEmJSON(copiaDeTarefas);
-    };
+
+        console.log(tarefas);
+    }
 
     const atualizaTarefa = ({ target }, index, id, prioridade, state) => {
-        console.log(target);
         const copiaDeTarefas = Array.from(tarefas);
-        copiaDeTarefas.splice(index, 1, { id: id, value: target.value, prioridade:prioridade, state: state });
+
+        copiaDeTarefas.splice(index, 1, { 
+            id: id, 
+            value: target.value, 
+            prioridade:prioridade, 
+            state: state 
+        });
         setTarefas(copiaDeTarefas);
         mostraEmJSON(copiaDeTarefas);
     };
@@ -27,7 +38,11 @@ function App() {
         state ? (state = false) : (state = true);
 
         const copiaDeTarefas = Array.from(tarefas);
-        copiaDeTarefas.splice(index, 1, { id: id, value: target.value, prioridade:prioridade, state: state });
+        copiaDeTarefas.splice(index, 1, { 
+            id: id, 
+            value: target.value, 
+            prioridade:prioridade, 
+            state: state });
         setTarefas(copiaDeTarefas);
         mostraEmJSON(copiaDeTarefas);
     };
@@ -40,32 +55,15 @@ function App() {
     };
 
     function mostraEmJSON(tarefas) {
-        // console.clear();
+        console.clear();
         console.log(JSON.stringify(tarefas, null, 4));
     }
 
-    // --------------------
-    const addNewTask = ( tarefa ) => {
-        // console.log(tarefa.prioridade)
-
-        const copiaDeTarefas = Array.from(tarefas);
-        copiaDeTarefas.push({ id: uuid(), value: tarefa.nome, prioridade:tarefa.prioridade, state: false });
-        setTarefas(copiaDeTarefas);
-        mostraEmJSON(copiaDeTarefas);
-
-        console.log(tarefas);
-    }
-
-
-    // --------------------
-
     return (
         <div className="App">
-            {/* <h1>TO-DO-LIST</h1> */}
             <h1>TAREFAS</h1>
             <CadastraTarefa 
-                onSubmit={adicionaNovaTarefa} 
-                onSubmit2={addNewTask}
+                onSubmitV2={adicionaNovaTarefaV2}
             />
 
             <ul className="lista-tarefas">
@@ -81,7 +79,6 @@ function App() {
                     />
                 ))}
             </ul>
-            
         </div>
     );
 }

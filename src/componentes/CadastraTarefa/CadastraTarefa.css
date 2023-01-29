@@ -40,7 +40,12 @@
 .container-cadastraItem button:active {
     transform: translate(2px, 2px);
     box-shadow: 0 0;
-    /* transition: transform 0.2s; */
+}
+
+.span-selecioneUmTarefa {
+    margin-top: 10px;
+    font-weight: 600;
+    color: red;
 }
 
 .secBtn {
@@ -50,6 +55,8 @@
     justify-content: center;
     gap: 20px;
     margin-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
 }
 
 .secBtn label {
