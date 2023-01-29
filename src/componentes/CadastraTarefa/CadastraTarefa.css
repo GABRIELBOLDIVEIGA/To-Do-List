@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 15px;
-    width: 90%;
+    width: 360px;
     border: 2px solid black;
     box-shadow: 2px 2px;
     background-color: #fff;
@@ -34,10 +34,74 @@
     background-color: #a9ddb7;
     cursor: pointer;
     margin-right: 5px;
+    transition-duration: 200ms, 200ms;
 }
 
 .container-cadastraItem button:active {
     transform: translate(2px, 2px);
     box-shadow: 0 0;
-    transition: transform 0.2s;
+    /* transition: transform 0.2s; */
+}
+
+.secBtn {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.secBtn label {
+    font-weight: 700;
+}
+
+.btn-prioridade {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 20px;
+    border: 2px solid black;
+    box-shadow: 2px 2px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.label-baixa {
+    transition-duration: 200ms, 200ms;
+    background-color: var(--prioridade-baixa);
+}
+
+.label-media{
+    transition-duration: 200ms, 200ms;
+    background-color: var(--prioridade-media);
+}
+
+.label-alta{
+    transition-duration: 200ms, 200ms;
+    background-color: var(--prioridade-alta);
+}
+
+#baixa:checked ~ .label-baixa {
+    border-color: var(--prioridade-baixa);
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px;
+}
+
+#media:checked ~ .label-media {
+    border-color: var(--prioridade-media);
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px;
+}
+
+#alta:checked ~ .label-alta {
+    border-color: var(--prioridade-alta);
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px;
 }

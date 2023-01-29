@@ -1,6 +1,8 @@
 import "./ListaTarefa.css";
 
-const ListaTarefa = ({ onChangeState, onChange, onDelete, value, id, state }) => {
+const ListaTarefa = ({ onChangeState, onChange, onDelete, value, prioridade, id, state }) => {
+
+    
     return (
         <li className="custom-checkbox item-lista">
             <div>
@@ -12,13 +14,17 @@ const ListaTarefa = ({ onChangeState, onChange, onDelete, value, id, state }) =>
                     onChange={onChangeState} 
                 />
                 <label htmlFor={id} />
-
+                
                 <input
-                type="text"
+                    type="text"
                     className="texto-tarefa" 
                     value={value} 
                     onChange={onChange} 
                 />
+                <div className="container-prioridade" id={prioridade}>
+                    <p>{prioridade}</p>
+                </div>
+                
             </div>
             
             <button className="btn-delete" onClick={onDelete} />

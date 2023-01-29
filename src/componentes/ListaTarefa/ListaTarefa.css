@@ -4,9 +4,10 @@
     justify-content: space-between;
     align-items: center;
     gap: 15px;
-    margin-top: 15px;
+    margin-top: 35px;
     padding-left: 15px;
-    background-color: #75c2f9;
+    /* background-color: #e9d1af; */
+    background-color: #bcd4e6;
     height: 45px;
     border: 2px solid black;
     box-shadow: 3px 3px;
@@ -44,7 +45,7 @@
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
-    background-color: #e3baff;
+    background-color:#e3baff ;
     margin-right: 5px;
 }
 
@@ -89,4 +90,35 @@ label:hover {
 
 .custom-checkbox input:checked ~ .texto-tarefa {
     text-decoration: line-through;
+}
+
+.container-prioridade {
+    width: 70px !important;
+    border: 2px solid black;
+    box-shadow: 1px 2.5px;
+
+    border-radius: 5px;
+    transform: translate(-273px, -23px)  rotate(-35deg);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-prioridade p {
+    font-size: 10px;
+    font-weight: 700;
+}
+
+/* id prioridades */
+#Baixa {
+    background-color: var(--prioridade-baixa);
+}
+
+#Media {
+    background-color: var(--prioridade-media);
+}
+
+#Alta {
+    background-color: var(--prioridade-alta);
 }

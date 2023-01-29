@@ -15,19 +15,19 @@ function App() {
         mostraEmJSON(copiaDeTarefas);
     };
 
-    const atualizaTarefa = ({ target }, index, id, state) => {
+    const atualizaTarefa = ({ target }, index, id, prioridade, state) => {
         console.log(target);
         const copiaDeTarefas = Array.from(tarefas);
-        copiaDeTarefas.splice(index, 1, { id: id, value: target.value, state: state });
+        copiaDeTarefas.splice(index, 1, { id: id, value: target.value, prioridade:prioridade, state: state });
         setTarefas(copiaDeTarefas);
         mostraEmJSON(copiaDeTarefas);
     };
 
-    const atualizaEstadoDaTarefa = ({ target }, index, id, state) => {
+    const atualizaEstadoDaTarefa = ({ target }, index, id, prioridade, state) => {
         state ? (state = false) : (state = true);
 
         const copiaDeTarefas = Array.from(tarefas);
-        copiaDeTarefas.splice(index, 1, { id: id, value: target.value, state: state });
+        copiaDeTarefas.splice(index, 1, { id: id, value: target.value, prioridade:prioridade, state: state });
         setTarefas(copiaDeTarefas);
         mostraEmJSON(copiaDeTarefas);
     };
@@ -40,26 +40,44 @@ function App() {
     };
 
     function mostraEmJSON(tarefas) {
-        console.clear();
+        // console.clear();
         console.log(JSON.stringify(tarefas, null, 4));
     }
 
+    // --------------------
+    const addNewTask = ( tarefa ) => {
+        // console.log(tarefa.prioridade)
+
+        const copiaDeTarefas = Array.from(tarefas);
+        copiaDeTarefas.push({ id: uuid(), value: tarefa.nome, prioridade:tarefa.prioridade, state: false });
+        setTarefas(copiaDeTarefas);
+        mostraEmJSON(copiaDeTarefas);
+
+        console.log(tarefas);
+    }
+
+
+    // --------------------
+
     return (
         <div className="App">
-            <h1>TO-DO-LIST</h1>
+            {/* <h1>TO-DO-LIST</h1> */}
+            <h1>TAREFAS</h1>
             <CadastraTarefa 
                 onSubmit={adicionaNovaTarefa} 
+                onSubmit2={addNewTask}
             />
 
             <ul className="lista-tarefas">
-                {tarefas.map(({ id, value, state }, index) => (
+                {tarefas.map(({ id, value, prioridade, state }, index) => (
                     <ListItems 
                         key={id} 
                         id={id} 
                         value={value} 
+                        prioridade={prioridade}
                         onDelete={() => deletaTarefa(index)} 
-                        onChange={(event) => atualizaTarefa(event, index, id, state)} 
-                        onChangeState={(event) => atualizaEstadoDaTarefa(event, index, id, state)} 
+                        onChange={(event) => atualizaTarefa(event, index, id, prioridade, state)} 
+                        onChangeState={(event) => atualizaEstadoDaTarefa(event, index, id, prioridade, state)} 
                     />
                 ))}
             </ul>
