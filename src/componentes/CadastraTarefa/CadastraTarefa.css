@@ -42,13 +42,13 @@
     box-shadow: 0 0;
 }
  
-/* @keyframes fadeOut {
+@keyframes fadeOut {
     0% { opacity: 1; }
     25% { opacity: 0.75; }
     50% { opacity: 0.50; }
     75% { opacity: 0.25; }
     100% { opacity: 0; }
-} */
+}
 
 .span-mensagem {
     height: 0;
@@ -57,11 +57,11 @@
 }
 
 .span-tarefaAdicionada {
-    color: blueviolet;
+    color: green;
 
-    /* -webkit-animation: fadeOut 1s;
-    animation: fadeOut 1s;
-    animation-fill-mode: forwards; */
+    -webkit-animation: fadeOut 1.5s;
+    animation: fadeOut 1.5s;
+    animation-fill-mode: forwards;
 }
 
 /* .mostrar {
@@ -72,7 +72,7 @@
 
 } */
 
-.span-selecioneUmTarefa {
+.span-selecioneUmPrioridade {
     color: red;
 }
 

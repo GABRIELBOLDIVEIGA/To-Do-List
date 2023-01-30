@@ -4,8 +4,10 @@ import "./CadastraTarefa.css";
 const CadastraTarefa = ({ onSubmitV2 }) => {
     const [novoItem, setNovoItem] = useState("");
     const [prioridadeTarefa, setPrioridadeTarefa] = useState("");
-    const [mensagemErro, setMensagemErro] = useState("");
-    const [mensagemTarefaAdicionada, setMensagemTarefaAdicionada] = useState("");
+    const [notificacao, setNotificacao] = useState({
+        className: "span-selecioneUmPrioridade",
+        mensagem: ""
+    });
 
     const setNovaTarefa = ({ target }) => {
         setNovoItem(target.value);
@@ -27,18 +29,34 @@ const CadastraTarefa = ({ onSubmitV2 }) => {
 
             onSubmitV2(tarefa)
             setPrioridadeTarefa("");
-            setMensagemErro("");
-            setMensagemTarefaAdicionada("Tarefa Adicionada");
+
+            setNotificacao(
+                {
+                    className: "span-tarefaAdicionada",
+                    mensagem: "Tarefa adicionada."
+                }
+            )
+
+            setTimeout(() => {
+                setNotificacao(
+                    {   
+                        className: "",
+                        mensagem: ""
+                    }
+                )
+            }, 1600);
+            
             event.target.reset();
         } else {
-            setMensagemErro("Selecione uma Prioridade.")
+            setNotificacao(
+                {
+                    className: "span-selecioneUmPrioridade",
+                    mensagem: "Selecione uma Prioridade."
+                }
+            )
         }
-
-        
-        setTimeout(() => {setMensagemTarefaAdicionada("")}, 1000);
-        
     }
-    
+
     return (
         <>
              <form onSubmit={submitV2}>
@@ -49,8 +67,8 @@ const CadastraTarefa = ({ onSubmitV2 }) => {
                     <button type="submit" />
                 </div>
 
-                <div className="span-mensagem span-tarefaAdicionada">{mensagemTarefaAdicionada}</div>
-                <div className="span-mensagem span-selecioneUmTarefa">{mensagemErro}</div>
+                <div className={`span-mensagem ${notificacao.className}`}>{notificacao.mensagem}</div>
+                <div className={`span-mensagem ${notificacao.className}`}>{notificacao.mensagem}</div>
                 
                 <div className="secBtn"> 
                     <input type="radio" id="baixa" name="prioridade" value="Baixa" onClick={onClick}/>
