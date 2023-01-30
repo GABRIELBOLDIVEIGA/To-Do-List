@@ -17,6 +17,8 @@ function App() {
         });
         setTarefas(copiaDeTarefas);
         mostraEmJSON(copiaDeTarefas);
+
+        // console.log(tarefas);
     }
 
     const atualizaTarefa = ({ target }, index, id, prioridade, state) => {
@@ -55,7 +57,7 @@ function App() {
     function mostraEmJSON(tarefas) {
         console.clear();
         console.log(JSON.stringify(tarefas, null, 4));
-        console.table(tarefas);
+        console.table(tarefas)
     }
 
     return (

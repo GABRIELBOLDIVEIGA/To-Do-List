@@ -52,7 +52,7 @@
 
 .span-mensagem {
     height: 0;
-    transform: translateY(60px);
+    transform: translateY(70px);
     font-weight: 600;
 }
 
@@ -83,7 +83,8 @@
     justify-content: center;
     gap: 20px;
     margin-top: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
+    /* padding-bottom: 10px; */
     border-bottom: 1px solid black;
 }
 
@@ -149,7 +150,8 @@ input[type="radio"] {
     }
 
     .container-cadastraItem {
-        width: 90%;
+        width: 100%;
+        /* border: 1px solid red; */
     }
 
     .secBtn {
@@ -158,6 +160,6 @@ input[type="radio"] {
 
     .span-selecioneUmTarefa {
         position: absolute;
-        transform: translateY(110px);
+        transform: translateY(120px);
     }
 }

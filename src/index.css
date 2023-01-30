@@ -49,12 +49,17 @@ body {
   	/* background-color: #ff90e8; */
   	background-color: #b2c5f6;
 	width: 100vw;
-	/* height: 100vh; */
+	height: 100vh;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	/* align-items: center; */
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+
+	background-image: url("../public/img/bg/grid-curved.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 }
 ol, ul {
 	list-style: none;

@@ -7,6 +7,7 @@
     margin-top: 35px;
     padding-left: 15px;
     background-color: #bcd4e6;
+    
     height: 45px;
     border: 2px solid black;
     box-shadow: 3px 3px;
@@ -97,7 +98,7 @@ label:hover {
     box-shadow: 1px 2.5px;
 
     border-radius: 5px;
-    transform: translate(-273px, -23px)  rotate(-35deg);
+    transform: translate(-560%, -23px)  rotate(-35deg);
     
     display: flex;
     justify-content: center;
@@ -124,6 +125,7 @@ label:hover {
 
 @media screen and (max-width: 400px) {
     .container-prioridade {
-        transform: translate(-213px, -23px) rotate(-35deg);
+        transform: translate(-515%, -23px) rotate(-35deg);
+        margin-left: 2px;
     }
 }
