@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
-
 .App {
     display: flex;
     flex-direction: column;
@@ -41,4 +40,12 @@
 
 ::-webkit-scrollbar {
     display: none;
+}
+
+@media screen and (max-width: 400px) {
+    .App {
+        width: 97%;
+        margin: 10px 0;
+        padding-bottom: 35px;
+    }
 }

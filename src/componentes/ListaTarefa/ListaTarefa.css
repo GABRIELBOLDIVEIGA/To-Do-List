@@ -121,3 +121,9 @@ label:hover {
 #Alta {
     background-color: var(--prioridade-alta);
 }
+
+@media screen and (max-width: 400px) {
+    .container-prioridade {
+        transform: translate(-213px, -23px) rotate(-35deg);
+    }
+}

@@ -41,10 +41,38 @@
     transform: translate(2px, 2px);
     box-shadow: 0 0;
 }
+ 
+/* @keyframes fadeOut {
+    0% { opacity: 1; }
+    25% { opacity: 0.75; }
+    50% { opacity: 0.50; }
+    75% { opacity: 0.25; }
+    100% { opacity: 0; }
+} */
+
+.span-mensagem {
+    height: 0;
+    transform: translateY(60px);
+    font-weight: 600;
+}
+
+.span-tarefaAdicionada {
+    color: blueviolet;
+
+    /* -webkit-animation: fadeOut 1s;
+    animation: fadeOut 1s;
+    animation-fill-mode: forwards; */
+}
+
+/* .mostrar {
+
+}
+
+.esconder {
+
+} */
 
 .span-selecioneUmTarefa {
-    margin-top: 10px;
-    font-weight: 600;
     color: red;
 }
 
@@ -85,12 +113,12 @@ input[type="radio"] {
     background-color: var(--prioridade-baixa);
 }
 
-.label-media{
+.label-media {
     transition-duration: 200ms, 200ms;
     background-color: var(--prioridade-media);
 }
 
-.label-alta{
+.label-alta {
     transition-duration: 200ms, 200ms;
     background-color: var(--prioridade-alta);
 }
@@ -111,4 +139,25 @@ input[type="radio"] {
     border-color: var(--prioridade-alta);
     transform: translate(2px, 2px);
     box-shadow: 1px 1px;
+}
+
+@media screen and (max-width: 400px) {
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-cadastraItem {
+        width: 90%;
+    }
+
+    .secBtn {
+        width: 90%;
+    }
+
+    .span-selecioneUmTarefa {
+        position: absolute;
+        transform: translateY(110px);
+    }
 }
