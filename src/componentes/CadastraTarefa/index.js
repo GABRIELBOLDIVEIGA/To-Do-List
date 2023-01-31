@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./CadastraTarefa.css";
 
 const CadastraTarefa = ({ onSubmitV2 }) => {
-    const [novoItem, setNovoItem] = useState("");
+    const [novaTarefa, setNovoItem] = useState("");
     const [prioridadeTarefa, setPrioridadeTarefa] = useState("");
     const [notificacao, setNotificacao] = useState({
         className: "span-selecioneUmPrioridade",
@@ -23,7 +23,7 @@ const CadastraTarefa = ({ onSubmitV2 }) => {
         
         if(prioridadeTarefa !== "") {
             const tarefa = {
-                nome: novoItem,
+                nome: novaTarefa,
                 prioridade: prioridadeTarefa
             }
 

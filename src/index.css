@@ -76,3 +76,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+@media screen and (max-width: 400px) {
+	body {
+		background-image: url("../public/img/bg/grid-hero.svg");
+	}
+}

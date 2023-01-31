@@ -94,6 +94,7 @@ label:hover {
 
 .container-prioridade {
     width: 70px !important;
+    
     border: 2px solid black;
     box-shadow: 1px 2.5px;
 
@@ -108,6 +109,7 @@ label:hover {
 .container-prioridade p {
     font-size: 10px;
     font-weight: 700;
+    
 }
 
 /* id prioridades */
@@ -125,7 +127,7 @@ label:hover {
 
 @media screen and (max-width: 400px) {
     .container-prioridade {
-        transform: translate(-515%, -23px) rotate(-35deg);
+        transform: translate(-515%, -23px)  rotate(-35deg);
         margin-left: 2px;
     }
 }

@@ -9,7 +9,7 @@ function App() {
 
     const adicionaNovaTarefaV2 = ( tarefa ) => {
         const copiaDeTarefas = Array.from(tarefas);
-        copiaDeTarefas.push({ 
+        copiaDeTarefas.unshift({ 
             id: uuid(), 
             value: tarefa.nome, 
             prioridade:tarefa.prioridade, 

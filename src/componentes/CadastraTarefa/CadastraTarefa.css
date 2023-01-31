@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 15px;
+    /* gap: 15px; */
     width: 360px;
     border: 2px solid black;
     box-shadow: 2px 2px;
@@ -63,14 +63,6 @@
     animation: fadeOut 1.5s;
     animation-fill-mode: forwards;
 }
-
-/* .mostrar {
-
-}
-
-.esconder {
-
-} */
 
 .span-selecioneUmPrioridade {
     color: red;

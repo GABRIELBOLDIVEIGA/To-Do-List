@@ -2,7 +2,6 @@ import "./ListaTarefa.css";
 
 const ListaTarefa = ({ onChangeState, onChange, onDelete, value, prioridade, id, state }) => {
 
-    
     return (
         <li className="custom-checkbox item-lista">
             <div>
