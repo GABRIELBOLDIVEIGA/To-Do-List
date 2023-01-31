@@ -17,8 +17,7 @@ function App() {
         });
         setTarefas(copiaDeTarefas);
         mostraEmJSON(copiaDeTarefas);
-
-        // console.log(tarefas);
+        salvaLocalStorage(copiaDeTarefas);
     }
 
     const atualizaTarefa = ({ target }, index, id, prioridade, state) => {
@@ -32,6 +31,7 @@ function App() {
         });
         setTarefas(copiaDeTarefas);
         mostraEmJSON(copiaDeTarefas);
+        salvaLocalStorage(copiaDeTarefas);
     };
 
     const atualizaEstadoDaTarefa = ({ target }, index, id, prioridade, state) => {
@@ -45,6 +45,7 @@ function App() {
             state: state });
         setTarefas(copiaDeTarefas);
         mostraEmJSON(copiaDeTarefas);
+        salvaLocalStorage(copiaDeTarefas);
     };
 
     const deletaTarefa = (index) => {
@@ -54,10 +55,20 @@ function App() {
         mostraEmJSON(copiaDeTarefas);
     };
 
-    function mostraEmJSON(tarefas) {
+    const mostraEmJSON = (tarefas) => {
         console.clear();
         console.log(JSON.stringify(tarefas, null, 4));
         console.table(tarefas)
+    }
+
+    const salvaLocalStorage = (tarefas) => {
+        localStorage.setItem("MinhasTarefas", JSON.stringify(tarefas));
+    } 
+
+    const buscaLocalStorage = () => {
+        const obj = JSON.parse(localStorage.getItem("MinhasTarefas"));
+        console.log(obj);
+        
     }
 
     return (
