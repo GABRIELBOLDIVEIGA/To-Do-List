@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     /* gap: 15px; */
-    width: 360px;
+    width: 350px;
     border: 2px solid black;
     box-shadow: 2px 2px;
     background-color: #fff;
@@ -142,7 +142,7 @@ input[type="radio"] {
     }
 
     .container-cadastraItem {
-        width: 100%;
+        width: 95%;
         /* border: 1px solid red; */
     }
 
