@@ -35,15 +35,15 @@
 
 .btn-delete {
     width: 38px;
-    height: 35px;
+    height: 33px;
     border-top-right-radius: 8px;
     border-bottom-left-radius: 8px;
     border: 2px solid black;
     box-shadow: 2px 2px;
-    background-image: url("../../../public/img/trash-240.png");
+    /* background-image: url("../../../public/img/trash-240.png");
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center; */
     cursor: pointer;
     background-color:#e3baff ;
     margin-right: 5px;

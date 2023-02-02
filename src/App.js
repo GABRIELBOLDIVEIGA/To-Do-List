@@ -9,32 +9,37 @@ function App() {
 
     const adicionaNovaTarefaV2 = ( tarefa ) => {
         const copiaDeTarefas = Array.from(tarefas);
-        copiaDeTarefas.unshift({ 
+        copiaDeTarefas.unshift(
+            { 
             id: uuid(), 
             value: tarefa.nome, 
             prioridade:tarefa.prioridade, 
-            state: false 
-        });
+            state: false,
+            data: new Date(),
+            deletada: false
+        })
+       
         setTarefas(copiaDeTarefas);
         mostraEmJSON(copiaDeTarefas);
         salvaLocalStorage(copiaDeTarefas);
     }
 
-    const atualizaTarefa = ({ target }, index, id, prioridade, state) => {
+    const atualizaTarefa = ({ target }, index, id, prioridade, state, data, deletada) => {
         const copiaDeTarefas = Array.from(tarefas);
-
         copiaDeTarefas.splice(index, 1, { 
             id: id, 
             value: target.value, 
             prioridade:prioridade, 
-            state: state 
+            state: state,
+            data: data,
+            deletada: deletada
         });
         setTarefas(copiaDeTarefas);
         mostraEmJSON(copiaDeTarefas);
         salvaLocalStorage(copiaDeTarefas);
     };
 
-    const atualizaEstadoDaTarefa = ({ target }, index, id, prioridade, state) => {
+    const atualizaEstadoDaTarefa = ({ target }, index, id, prioridade, state, data, deletada) => {
         state ? (state = false) : (state = true);
 
         const copiaDeTarefas = Array.from(tarefas);
@@ -42,7 +47,10 @@ function App() {
             id: id, 
             value: target.value, 
             prioridade:prioridade, 
-            state: state });
+            state: state,
+            data: data,
+            deletada: deletada
+        });
         setTarefas(copiaDeTarefas);
         mostraEmJSON(copiaDeTarefas);
         salvaLocalStorage(copiaDeTarefas);
@@ -68,7 +76,7 @@ function App() {
     const buscaLocalStorage = () => {
         const obj = JSON.parse(localStorage.getItem("MinhasTarefas"));
         console.log(obj);
-        
+
     }
 
     return (
@@ -77,17 +85,17 @@ function App() {
             <CadastraTarefa 
                 onSubmitV2={adicionaNovaTarefaV2}
             />
-
+            {/* { id, value, prioridade, state, data, deletada }, */}
             <ul className="lista-tarefas">
-                {tarefas.map(({ id, value, prioridade, state }, index) => (
+                {tarefas.map((tarefa,  index) => (
                     <ListItems 
-                        key={id} 
-                        id={id} 
-                        value={value} 
-                        prioridade={prioridade}
+                        key={tarefa.id} 
+                        id={tarefa.id} 
+                        value={tarefa.value} 
+                        prioridade={tarefa.prioridade}
                         onDelete={() => deletaTarefa(index)} 
-                        onChange={(event) => atualizaTarefa(event, index, id, prioridade, state)} 
-                        onChangeState={(event) => atualizaEstadoDaTarefa(event, index, id, prioridade, state)} 
+                        onChange={(event) => atualizaTarefa(event, index, tarefa.id, tarefa.prioridade, tarefa.state, tarefa.data, tarefa.deletada)} 
+                        onChangeState={(event) => atualizaEstadoDaTarefa(event, index, tarefa.id, tarefa.prioridade, tarefa.state, tarefa.data, tarefa.deletada)} 
                     />
                 ))}
             </ul>

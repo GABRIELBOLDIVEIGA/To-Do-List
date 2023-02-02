@@ -1,7 +1,7 @@
 import "./ListaTarefa.css";
+import { FiTrash2 } from "react-icons/fi"
 
 const ListaTarefa = ({ onChangeState, onChange, onDelete, value, prioridade, id, state }) => {
-
     return (
         <li className="custom-checkbox item-lista">
             <div>
@@ -26,7 +26,7 @@ const ListaTarefa = ({ onChangeState, onChange, onDelete, value, prioridade, id,
                 
             </div>
             
-            <button className="btn-delete" onClick={onDelete} />
+            <FiTrash2 className="btn-delete" onClick={onDelete} />
         </li>
     );
 };
