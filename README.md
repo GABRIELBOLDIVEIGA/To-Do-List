@@ -1,5 +1,6 @@
-<h1 align="center"> Lista de Tarefas </h1>
-![To-Do-List](https://user-images.githubusercontent.com/110861595/217385193-916b74ed-a694-4d05-ac22-ae117701ce0e.gif)
+# Lista de Tarefas
+
+![To-Do-List](https://user-images.githubusercontent.com/110861595/217386091-e186302a-3a84-4278-a206-4939167fb1be.gif)
 
 ## Scripts disponíveis
 
@@ -19,3 +20,4 @@ No navegador padrão a porta: [http://localhost:3000](http://localhost:3000) est
 ### `npm i react-uuid` 
 
 [https://www.npmjs.com/package/react-uuid](https://www.npmjs.com/package/react-uuid)
+
