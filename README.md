@@ -1,4 +1,5 @@
 <h1 align="center"> Lista de Tarefas </h1>
+![To-Do-List](https://user-images.githubusercontent.com/110861595/217385193-916b74ed-a694-4d05-ac22-ae117701ce0e.gif)
 
 ## Scripts disponíveis
 
