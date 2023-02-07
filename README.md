@@ -1,5 +1,7 @@
 # Lista de Tarefas
 
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
+
 ![To-Do-List](https://user-images.githubusercontent.com/110861595/217386091-e186302a-3a84-4278-a206-4939167fb1be.gif)
 
 ## Scripts disponíveis
