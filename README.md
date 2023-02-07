@@ -1,5 +1,4 @@
-# To-Do-List Criado em React
-<h1 align="center"> Seu título aqui </h1>
+<h1 align="center"> Lista de Tarefas </h1>
 
 ## Scripts disponíveis
 
